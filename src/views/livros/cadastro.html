@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../../public/img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Personal</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+        <!-- CSS  -->
+        <link rel="stylesheet" href="../../public/css/linearicons.css">
+        <link rel="stylesheet" href="../../public/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../public/css/bootstrap.css">
+        <link rel="stylesheet" href="../../public/css/magnific-popup.css">
+        <link rel="stylesheet" href="../../public/css/jquery-ui.css">				
+        <link rel="stylesheet" href="../../public/css/nice-select.css">							
+        <link rel="stylesheet" href="../../public/css/animate.min.css">
+        <link rel="stylesheet" href="../../public/css/main.css">
+        <script>
+                $(document).ready( function() {
+                $(document).on('change', '.btn-file :file', function() {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+                });
+    
+                $('.btn-file :file').on('fileselect', function(event, label) {
+                    
+                    var input = $(this).parents('.input-group').find(':text'),
+                        log = label;
+                    
+                    if( input.length ) {
+                        input.val(log);
+                    } else {
+                        if( log ) alert(log);
+                    }
+                
+                });
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        
+                        reader.onload = function (e) {
+                            $('#img-upload').attr('src', e.target.result);
+                        }
+                        
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+    
+                $("#imgInp").change(function(){
+                    readURL(this);
+                }); 	
+            });
+            </script>
+    </head>
+    <body>	
+      <header id="header" class="parent-active header-scrolled">
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+              <div id="logo">
+                <a href="index.html" style="font-size: 30px"><font color="black">IP<font color="green"><b>B</b></font>ook</font></font></a>
+              </div>
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">                                         
+                  <li><a href="#">username</a></li>
+                </ul>
+              </nav><!-- #nav-menu-container -->		    		
+            </div>
+        </div>
+      </header><!-- #header -->
+        <!-- start banner Area -->
+        <section class="relative about-banner">	
+            <div class="overlay overlay-bg"></div>
+            <div class="container">				
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content  col-lg-12" style="padding: 50px 0px !important;">
+                        <h4 class="text-white">
+                            Se alguém anseia pela sabedoria de Deus, terá de renunciar à própria sabedoria e pedir a luz divina.                              				
+                        </h4>
+                        <p class="text-white"> - João Calvino</p>
+                    </div>	
+                </div>
+            </div>
+        </section>
+        <!-- End banner Area -->
+        <!-- Start recent-blog Area -->
+			<section class="recent-blog-area section-gap" id="cadastro">
+				<div class="container">
+					<div class="justify-content-center" style="margin-left: 120px; margin-right: 120px;">
+						<div class="col-md-8 header-text " style="margin-left: 150px;">
+							<h1>Cadastro do Livro</h1>
+							<p style="margin-bottom: 0px;">
+								Preencha todos os dados!
+							</p>
+						</div>
+                        <div class="col-lg-12 form-group">
+						    <div class="row">	
+                                <div class="col-lg-12">
+                                    <label>Upload Image</label>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-default btn-file">
+                                                Browse… <input type="file" id="imgInp">
+                                            </span>
+                                        </span>
+                                        <input type="text" class="form-control" readonly>
+                                    </div>
+                                    <img id='img-upload'/>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label>Titulo</label>
+                                    <input name="name" placeholder="Nome" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label>Autor</label>
+                                    <input name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label>Categoria</label>
+                                    <input name="password" type="password" placeholder="Senha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'" class="common-input mb-20 form-control" required="" type="text">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Nº paginas</label>
+                                    <input name="password" type="password" placeholder="Senha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'" class="common-input mb-20 form-control" required="" type="text">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Editora</label>
+                                    <input name="password" type="password" placeholder="Senha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'" class="common-input mb-20 form-control" required="" type="text">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label>Sinopsia</label>                                    
+								    <textarea class="common-textarea form-control" name="message" cols="130" rows="8"  placeholder="Digite todo seu endereço" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>				
+                                </div>
+                                <div class="col-lg-12 form-group">
+                                    <div class="alert-msg" style="text-align: left;"></div>
+                                    <button class="genric-btn primary" style="float: right;">Cadastro</button>											
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- end recent-blog Area -->
+
+        <script src="../../public/js/vendor/jquery-2.2.4.min.js"></script>
+    </body>
+</html>
